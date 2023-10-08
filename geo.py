@@ -54,11 +54,6 @@ def add_info(field):
 url = 'http://ip-api.com/json/'
 
 
-# geoinfo dump file
-
-dump_file = environ['HOME'] + '/.geoloc'
-
-
 # cli arg
 
 myname = argv.pop(0).split('/')[-1]
