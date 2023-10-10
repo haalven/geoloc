@@ -4,7 +4,6 @@
 
 
 from sys import argv, exit
-from os  import environ
 from requests import get
 from socket import gethostbyaddr
 from re  import search
