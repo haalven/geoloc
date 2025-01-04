@@ -3,8 +3,9 @@
 # geo location using ip-api.com
 
 
+import urllib.request
+from json import loads
 from sys import argv, exit
-from requests import get
 from socket import gethostbyaddr
 from re  import search
 
@@ -15,8 +16,11 @@ from re  import search
 def api_get(url, p):
 
     url = url.strip('/')
+    url += '/' + p
 
-    try: return get(url + '/' + p).json()
+    try:
+        with urllib.request.urlopen(url) as r:
+            return loads(r.read().decode('utf-8'))
     except Exception as e: print('api error:', e)
 
 
