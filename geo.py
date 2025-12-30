@@ -37,7 +37,7 @@ def main() -> int:
     sorted_list.append(socket.gethostbyaddr(target)[0])
 
     # output
-    print(' \u203A '.join(sorted_list))
+    print('\x1b[1m \u203A \x1b[0m'.join(sorted_list))
     return 0
 
 if __name__ == '__main__':
