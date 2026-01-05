@@ -30,7 +30,8 @@ def main() -> int:
     sorted_keys = ('country', 'regionName', 'city', 'isp', 'org', 'query')
     sorted_list = []
     for key in sorted_keys:
-        sorted_list.append(location[key])
+        if not location[key] in sorted_list:
+            sorted_list.append(location[key])
 
     # add reverse DNS
     try:
