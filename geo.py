@@ -34,7 +34,10 @@ def main() -> int:
         sorted_list.append(location[key])
 
     # add reverse DNS
-    sorted_list.append(socket.gethostbyaddr(target)[0])
+    try:
+        sorted_list.append(socket.gethostbyaddr(target)[0])
+    except:
+        pass
 
     # output
     print('\x1b[1m \u203A \x1b[0m'.join(sorted_list))
