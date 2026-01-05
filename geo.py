@@ -8,10 +8,9 @@ import sys, argparse, pathlib, urllib.request, socket, json
 def main() -> int:
     # my path
     my_path = pathlib.Path(__file__)
-    my_name = my_path.name
 
     # get address argument
-    parser = argparse.ArgumentParser(prog=my_name)
+    parser = argparse.ArgumentParser(prog=my_path.name)
     parser.add_argument('address', type=str, help='hostname or IP')
     target = parser.parse_args().address
 
